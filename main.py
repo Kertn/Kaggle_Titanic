@@ -37,15 +37,16 @@ for data, answ in zip(train_data.values, answers):
             data[-1] = data[-1].split(" ")[0]
         data[-1] = round(float(data[-1].replace(f'{data[-1][0]}', values[data[-1][0]])))
     training_data.append((data, answ))
-
+print(np.shape(training_data[0][0]))
 test_data = training_data[:50]
 training_data = training_data[100:150]
-print(training_data)
+
 training_data[0] = (np.array([-100, -100, -100, -100, -100, -100, -1000], dtype=object), 0)
-print(training_data)
 
-print(train_data.head())
 
+
+"""
 Titanic = Neurons([7, 4, 2, 1])
 Titanic.SGD(training_data, 100, 1, 0.01, test_data=test_data)
 Titanic.make_graph()
+"""
